@@ -41,15 +41,15 @@ public class DemoRestController {
         return students.get(studentId);
     }
 
-    @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exception) {
-
-        StudentErrorResponse error = new StudentErrorResponse(
-                HttpStatus.NOT_FOUND.value(),
-                exception.getMessage(),
-                System.currentTimeMillis()
-        );
-
-        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-    }
+//    @ExceptionHandler
+//    public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exception) {
+//
+//        StudentErrorResponse error = new StudentErrorResponse(
+//                HttpStatus.NOT_FOUND.value(),
+//                exception.getMessage(),
+//                System.currentTimeMillis()
+//        );
+//
+//        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+//    }
 }
