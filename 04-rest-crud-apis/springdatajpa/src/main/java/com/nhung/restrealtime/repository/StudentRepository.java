@@ -1,4 +1,4 @@
-package com.nhung.restrealtime.DAO;
+package com.nhung.restrealtime.repository;
 
 import com.nhung.restrealtime.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
