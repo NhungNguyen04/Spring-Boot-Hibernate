@@ -34,9 +34,16 @@ public class DemoSecurityConfig {
 //        return new InMemoryUserDetailsManager(john, mary, susan);
 //    }
 
+
+    // customize spring security data table
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
-        return new JdbcUserDetailsManager(dataSource);
+        JdbcUserDetailsManager theUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+
+        theUserDetailsManager.setUsersByUsernameQuery("select user_id, pw, active from members where user_id=?");
+        theUserDetailsManager.setAuthoritiesByUsernameQuery("select user_id, role from roles where user_id=?");
+
+        return theUserDetailsManager;
     }
 
     @Bean
