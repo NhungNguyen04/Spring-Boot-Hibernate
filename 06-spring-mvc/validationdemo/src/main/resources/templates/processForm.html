@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Form</title>
+</head>
+<body>
+    <h1 th:text="'Your name is:' + ${customer.firstName} + ' ' + ${customer.lastName} + ' aged ' + ${customer.age}" ></h1>
+    <h1 th:text="'Postal code: ' + ${customer.postalCode}"></h1>
+    <h1 th:text="'Your course code is: ' + ${customer.courseCode}"></h1>
+</body>
+</html>

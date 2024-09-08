@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show customer form</title>
+</head>
+<body>
+    <form th:action="@{/processForm}" th:method="POST" th:object="${customer}">
+        <span>Enter your information, * field is required</span>
+        <br><br>
+        <span>First Name:</span>
+        <input th:field="*{firstName}" placeholder="Enter your first name">
+        <br><br>
+        <span>Last Name(*):</span>
+        <input th:field="*{lastName}" placeholder="Enter your last name" required="required">
+        <span th:if="${#fields.hasErrors('lastName')}"
+              th:errors="*{lastName}"
+              class="error"></span>
+        <br><br>
+        <span>Age:</span>
+        <input th:field="*{age}" placeholder="Enter your age">
+        <span th:if="${#fields.hasErrors('age')}"
+              th:errors="*{age}"
+              class="error"></span>
+        <br><br>
+        <span>Postal code:</span>
+        <input th:field="*{postalCode}" placeholder="Enter your postal code">
+        <span th:if="${#fields.hasErrors('postalCode')}"
+              th:errors="*{postalCode}"
+              class="error"></span>
+        <br><br>
+        <span>Course code: </span>
+        <input th:field="*{courseCode}" placeholder="Enter your course code">
+        <span th:if="${#fields.hasErrors('courseCode')}"
+              th:errors="*{courseCode}"
+              class="error"></span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

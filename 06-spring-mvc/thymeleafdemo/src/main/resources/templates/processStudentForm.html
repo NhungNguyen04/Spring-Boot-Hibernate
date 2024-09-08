@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm student</title>
+</head>
+<body>
+    <h1>The student is confirmed:
+        <span th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+        Lives in:
+        <span th:text="${student.nationality}"></span>
+        Favorite programming languages:
+        <span th:each="language : ${student.programmingLanguages}" th:text="${language}"></span>
+        Currently using system:
+        <span th:text="${student.system}"></span>
+    </h1>
+</body>
+</html>
