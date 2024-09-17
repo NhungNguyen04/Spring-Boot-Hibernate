@@ -1,9 +1,11 @@
 package com.nhung.springaopdemo;
 
 import com.nhung.springaopdemo.dao.AccountDAO;
+import com.nhung.springaopdemo.dao.Member;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -14,14 +16,21 @@ public class SpringaopdemoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(AccountDAO theAccountDAO) {
+	public CommandLineRunner commandLineRunner(AccountDAO theAccountDAO, Member theMember) {
 		return args -> {
-			demoBeforeAdvice(theAccountDAO);
+			demoBeforeAdvice(theAccountDAO, theMember);
 		};
 	}
 
-	public void demoBeforeAdvice(AccountDAO theAccountDAO) {
+	public void demoBeforeAdvice(AccountDAO theAccountDAO, Member member) {
+		theAccountDAO.setName("Nhung");
+		member.setId(1);
+
 		theAccountDAO.addAccount();
+		member.addMember();
+
+		System.out.println(theAccountDAO.getName());
+		System.out.println(member.getId());
 	}
 
 }

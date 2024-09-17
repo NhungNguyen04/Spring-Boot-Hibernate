@@ -6,9 +6,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class AccountDAOImpl implements AccountDAO {
 
+    String name;
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public void addAccount() {
-        System.out.println("Adding account");
+        System.out.println("Adding account named" + name);
     }
 }
