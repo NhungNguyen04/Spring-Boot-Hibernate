@@ -1,29 +1,27 @@
 package com.nhung.springaopdemo.dao;
 
 
+import com.nhung.springaopdemo.Entity.Account;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class AccountDAOImpl implements AccountDAO {
 
-    String name;
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public void addAccount() {
-        System.out.println("Adding account named" + name);
-    }
-
     @Override
     public void sendToCloud() {
         System.out.println("Sending to cloud");
+    }
+
+    @Override
+    public List<Account> findAccount() {
+        List<Account> accounts = new ArrayList<Account>();
+        accounts.add(new Account(1, "Nhung"));
+        accounts.add(new Account(2, "Hung"));
+        accounts.add(new Account(3, "Trang"));
+
+        return accounts;
     }
 }

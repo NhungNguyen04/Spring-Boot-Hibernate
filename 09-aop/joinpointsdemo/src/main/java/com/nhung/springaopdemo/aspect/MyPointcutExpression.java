@@ -9,17 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyPointcutExpression {
 
-    @Pointcut("execution(public * com.nhung.springaopdemo.dao.*.get*(..))")
-    public void forGetMethod() {}
-
-    @Pointcut("execution(public void com.nhung.springaopdemo.dao.*.set*(..))")
-    public void forSetMethod() {}
-
-    @Pointcut("execution(public void com.nhung.springaopdemo.dao.*.sendToCloud())")
-    public void forCloudLog() {}
-
-    @Pointcut("execution(public void com.nhung.springaopdemo.dao.*.sendApi())")
-    public void forApiAnalytics() {}
-
+    @Pointcut("execution(* com.nhung.springaopdemo.dao.*.findAccount())")
+    public void afterFindAccounts() {}
 
 }

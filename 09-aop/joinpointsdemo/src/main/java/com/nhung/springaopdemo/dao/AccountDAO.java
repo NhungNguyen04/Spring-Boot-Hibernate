@@ -1,10 +1,12 @@
 package com.nhung.springaopdemo.dao;
 
+import com.nhung.springaopdemo.Entity.Account;
+
+import java.util.List;
+
 public interface AccountDAO {
 
-    public String getName();
-    public void setName(String name);
-
-    void addAccount();
     void sendToCloud();
+
+    List<Account> findAccount();
 }
