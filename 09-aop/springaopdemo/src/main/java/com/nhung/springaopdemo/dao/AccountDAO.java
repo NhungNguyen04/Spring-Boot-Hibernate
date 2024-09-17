@@ -6,4 +6,5 @@ public interface AccountDAO {
     public void setName(String name);
 
     void addAccount();
+    void sendToCloud();
 }

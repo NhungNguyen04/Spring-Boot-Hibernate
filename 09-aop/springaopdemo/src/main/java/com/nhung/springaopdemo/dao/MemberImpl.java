@@ -22,4 +22,9 @@ public class MemberImpl implements Member{
     public void addMember() {
         System.out.println("Adding member account with id " + id);
     }
+
+    @Override
+    public void sendApi() {
+        System.out.println("Sending api");
+    }
 }

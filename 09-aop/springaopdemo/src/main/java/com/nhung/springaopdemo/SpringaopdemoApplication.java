@@ -26,11 +26,11 @@ public class SpringaopdemoApplication {
 		theAccountDAO.setName("Nhung");
 		member.setId(1);
 
-		theAccountDAO.addAccount();
-		member.addMember();
-
 		System.out.println(theAccountDAO.getName());
 		System.out.println(member.getId());
+
+		theAccountDAO.sendToCloud();
+		member.sendApi();
 	}
 
 }

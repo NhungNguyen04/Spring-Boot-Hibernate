@@ -6,4 +6,5 @@ public interface Member {
     public void setId(Integer id);
 
     public void addMember();
+    public void sendApi();
 }

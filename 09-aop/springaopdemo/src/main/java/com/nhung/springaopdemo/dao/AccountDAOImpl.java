@@ -21,4 +21,9 @@ public class AccountDAOImpl implements AccountDAO {
     public void addAccount() {
         System.out.println("Adding account named" + name);
     }
+
+    @Override
+    public void sendToCloud() {
+        System.out.println("Sending to cloud");
+    }
 }
